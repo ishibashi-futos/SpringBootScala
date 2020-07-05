@@ -1,0 +1,31 @@
+plugins {
+	id 'scala'
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.github.fishibashi'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "org.scala-lang:scala-library:2.12.7"
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+	compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.5.Final'
+
+}
+
+test {
+	useJUnitPlatform()
+}
