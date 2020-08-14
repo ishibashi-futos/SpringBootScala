@@ -38,4 +38,15 @@ class Week2STest {
     assertEquals(toJ(Friday), "金曜日")
     assertEquals(toJ(Saturday), "土曜日")
   }
+
+  @Test
+  def nextDayOfWeekTest(): Unit = {
+    assertEquals(DayOfWeek.nextDayOfWeek(Sunday), Monday)
+    assertEquals(DayOfWeek.nextDayOfWeek(Monday), Tuesday)
+    assertEquals(DayOfWeek.nextDayOfWeek(Tuesday), Wednesday)
+    assertEquals(DayOfWeek.nextDayOfWeek(Wednesday), Thursday)
+    assertEquals(DayOfWeek.nextDayOfWeek(Thursday), Friday)
+    assertEquals(DayOfWeek.nextDayOfWeek(Friday), Saturday)
+    assertEquals(DayOfWeek.nextDayOfWeek(Saturday), Sunday)
+  }
 }
